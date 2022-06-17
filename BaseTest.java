@@ -1,5 +1,6 @@
 package com.testNG;
 
+import org.testng.annotations.AfterMethod;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest
 {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 
 	public void intializationDriver(String strUrl)
 	{
@@ -19,13 +20,15 @@ public class BaseTest
 		driver.manage().window().maximize();
 	
 	}
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
-	/*
-	 * public WebDriver getDriver() { return driver; } public void
-	 * setDriver(WebDriver driver) { BaseTest.driver = driver; }
-	 */
+	
+	 public WebDriver getDriver() { return driver; } 
+	 public void
+	 setDriver(WebDriver driver) { BaseTest.driver = driver; }
+	
 	
 	public void waitFor(int timeUnitinsecond)
 	{

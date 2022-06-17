@@ -1,12 +1,12 @@
 package com.assertions;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import com.testNG.BaseTest;
 
-public class AssertionTest extends BaseTest {
+
+public class AssertionTest extends BaseTest  {
 
 	private AssertionExamples objassert;
 	
@@ -26,7 +26,7 @@ public class AssertionTest extends BaseTest {
 	}
 	
 	
-	@Test
+	@Test(priority = 1, groups = "Functional")
 	public void TCID_101_verifyAsserEquals()
 	{
 		objassert.getassertequals();
@@ -56,4 +56,11 @@ public class AssertionTest extends BaseTest {
 		objassert.getassertNull();
 		objassert.getassertNotNull();
 	}
+	
+	@Test
+	public void TCID_106_verifyAsserttrueExample()
+	{
+		objassert.assertTrueExample();
+	}
+	
 }
